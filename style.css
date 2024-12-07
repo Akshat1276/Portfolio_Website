@@ -76,9 +76,34 @@ main hr{
 .text-gray{
     color: gray;
 }
-.secondSection box{
+.secondSection .box{
     background: white;
     width: 80vw;
     height: 2px;
     margin: 56px 0;
+    display: flex;
+}
+.secondSection .vertical{
+    height: 93px;
+    width: 1px;
+    background-color: white;
+    margin: 0 100px;
+    /* display: flex; */
+}
+.image-top{
+    width: 73px;
+    position: relative;
+    top: -66px;
+    left: -37px;
+}
+.vertical-title{
+    position: relative;
+    top: 19px;
+    width: 150px;
+}
+.vertical-desc{
+    position: relative;
+    top: 30px;
+    width: 150px;
+    color: gray;
 }
