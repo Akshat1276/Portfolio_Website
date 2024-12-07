@@ -63,6 +63,7 @@ nav ul li a:hover{
 .secondSection{
     max-width: 80vw;
     margin: auto;
+    height: 1000px; /*EDIT IN THE FUTURE */
 }
 .secondSection h1{
     font-size: 1.9rem;
@@ -78,7 +79,7 @@ main hr{
 }
 .secondSection .box{
     background: white;
-    width: 80vw;
+    width: 80vw; /*CHANGE FOR MODIFYING THE HORIZONTAL LINE*/
     height: 2px;
     margin: 56px 0;
     display: flex;
@@ -87,7 +88,7 @@ main hr{
     height: 93px;
     width: 1px;
     background-color: white;
-    margin: 0 100px;
+    margin: 0 100px; /*CHANGE FOR MODIFYING THE HORIZONTAL LINE*/
     /* display: flex; */
 }
 .image-top{
@@ -100,10 +101,12 @@ main hr{
     position: relative;
     top: 19px;
     width: 150px;
+    font-size: 14px;
 }
 .vertical-desc{
     position: relative;
     top: 30px;
     width: 150px;
     color: gray;
+    font-size: 10px;
 }
