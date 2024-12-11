@@ -13,6 +13,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Progress Bar -->
+    <div class="progressBar" id="progressBar"></div>
+
+    <script>
+      window.onscroll = function () {
+        updateProgressBar();
+      };
+
+      function updateProgressBar() {
+        const progressBar = document.getElementById("progressBar");
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPosition = window.scrollY;
+
+        const progressWidth = (scrollPosition / totalHeight) * 100;
+
+        progressBar.style.width = progressWidth + "%";
+      }
+    </script>
+
     <header>
       <nav>
         <div class="left">Akshat's Portfolio</div>
@@ -33,64 +52,60 @@
           Hi, my name is <span class="purple">Akshat</span>
           <div>And I am a passionate</div>
           <span id="element"></span>
-    </div>
+        </div>
         <div class="rightSection">
           <img src="images/image.png" />
         </div>
       </section>
-      <hr>
+      <hr />
       <section class="secondSection">
         <span class="text-gray">What I have done so far</span>
         <h1>Work Experiences</h1>
         <div class="box">
-            <div class="vertical">
-                <img class="image-top" src="images/image.png" alt="">
-                <div class="vertical-title">
-                    HTML Developer (2010-2012)
-                </div>
-                <div class="vertical-desc">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, dignissimos.
-                </div>
+          <div class="vertical">
+            <img class="image-top" src="images/image.png" alt="" />
+            <div class="vertical-title">HTML Developer (2010-2012)</div>
+            <div class="vertical-desc">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+              dignissimos.
             </div>
-            <div class="vertical">
-                <img class="image-top" src="images/image.png" alt="">
-                <div class="vertical-title">
-                    HTML Developer (2010-2012)
-                </div>
-                <div class="vertical-desc">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, dignissimos.
-                </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="images/image.png" alt="" />
+            <div class="vertical-title">HTML Developer (2010-2012)</div>
+            <div class="vertical-desc">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+              dignissimos.
             </div>
-            <div class="vertical">
-                <img class="image-top" src="images/image.png" alt="">
-                <div class="vertical-title">
-                    HTML Developer (2010-2012)
-                </div>
-                <div class="vertical-desc">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, dignissimos.
-                </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="images/image.png" alt="" />
+            <div class="vertical-title">HTML Developer (2010-2012)</div>
+            <div class="vertical-desc">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+              dignissimos.
             </div>
-            <div class="vertical">
-                <img class="image-top" src="images/image.png" alt="">
-                <div class="vertical-title">
-                    HTML Developer (2010-2012)
-                </div>
-                <div class="vertical-desc">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, dignissimos.
-                </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="images/image.png" alt="" />
+            <div class="vertical-title">HTML Developer (2010-2012)</div>
+            <div class="vertical-desc">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
+              dignissimos.
             </div>
+          </div>
         </div>
       </section>
     </main>
     <footer>
-        <div class="footer">
-            <div class="footer-first">
-                <h3>Akshat's Developer Portfolio</h3>
-            </div>
-            <div class="footer-second"></div>
-            <div class="footer-third"></div>
-            <div class="footer-fourth"></div>
+      <div class="footer">
+        <div class="footer-first">
+          <h3>Akshat's Developer Portfolio</h3>
         </div>
+        <div class="footer-second"></div>
+        <div class="footer-third"></div>
+        <div class="footer-fourth"></div>
+      </div>
     </footer>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
