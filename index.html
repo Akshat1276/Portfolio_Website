@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Akshat Yadav - Developer Portfolio</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio project Akshat Yadav</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,208 +14,366 @@
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script
-      nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script> 
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div
-      id="intro-landing"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1000;
-        background: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-      "
-    >
-      <img
-        src="images/profileImage.png"
-        alt="Self Image"
-        class="intro-image"
-        style="
-          width: 100%;
-          height: 47%;
-          object-fit: contain;
-          z-index: -1;
-          position: relative;
-          right: -364px;
-        "
-      />
-      <div
-        class="intro-quote"
-        style="
-          position: absolute;
-          color: white;
-          font-size: 2rem;
-          font-weight: bold;
-          text-align: center;
-          z-index: 10;
-          right: 615px;
-        "
-      >
-        WELCOME TO AKSHAT'S WORLD
-      </div>
-    </div>
-
-    <script>
-        window.addEventListener("load", function () {
-          const introLanding = document.getElementById("intro-landing");
-          const mainContent = document.querySelector(".main-content");
-
-          // Start the slide-away animation
-          introLanding.style.animation = "slideAway 2.5s ease-out 2s forwards";
-
-          // After the animation, hide the intro and show the main content
-          setTimeout(() => {
-            introLanding.style.display = "none";
-            mainContent.style.display = "block"; // Show the main content
-            document.body.style.overflow = "auto"; // Restore scrolling
-          }, 5000); // Match the animation duration (5 seconds)
-        });
-
-        // Inline keyframe animation
-        const style = document.createElement("style");
-        style.innerHTML = `
-        @keyframes slideAway {
-          0% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-100%);
-            opacity: 0;
-          }
-        }
-      `;
-        document.head.appendChild(style);
-    </script>
+</head>
+<body>
 
     <!-- Progress Bar -->
     <div class="progressBar" id="progressBar"></div>
-
     <script>
-      window.onscroll = function () {
-        updateProgressBar();
-      };
+        window.addEventListener("scroll", function () {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercent = (scrollTop / docHeight) * 100;
+          const progressBar = document.getElementById("progressBar");
+          progressBar.style.width = scrollPercent + "%";
+        });
+      </script>
+    <header class="header">
+        <div class="headerContent">
+            <div class="logo">
+                <a href="#intro-landing">AKSHAT YADAV</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#panel2">My Projects</a></li>
+                    <li><a href="#panel3">About Me</a></li>
+                    <li><a href="#panel4">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- link to panel2 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('a[href="#panel2"]'); // Select the link pointing to .panel2
 
-      function updateProgressBar() {
-        const progressBar = document.getElementById("progressBar");
-        const totalHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPosition = window.scrollY;
+            links.forEach((link) => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default anchor behavior
 
-        const progressWidth = (scrollPosition / totalHeight) * 100;
+                    const targetElement = document.querySelector(".panel2"); // Select the target element
+                    const offset = -500; // Adjust this value to control how far above the element you want to stop
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY + offset;
 
-        progressBar.style.width = progressWidth + "%";
-      }
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth", // Enable smooth scrolling
+                    });
+                });
+            });
+        });
     </script>
 
-    <header>
-      <nav>
-        <div class="left">Akshat's Portfolio</div>
-        <div class="right">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">About</a></li>
-            <li><a href="/">Service provided by us</a></li>
-            <li><a href="/">Projects</a></li>
-            <li><a href="/">Contact Me</a></li>
-          </ul>
+    <div id="tsparticles"></div>
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.6/tsparticles.bundle.min.js"></script>
+        <script type="text/javascript">
+            tsParticles.load("tsparticles", {
+                particles: {
+                    links: {
+                        enable: true
+                    },
+                    move: {
+                        enable: true,
+                        speed: 3
+                    }
+                }
+            });
+        </script>
+    <div id="intro-landing">
+        <div class="startBtn">
+            <button class="Sbutton" id="Sbutton">LET'S GO</button>
         </div>
-      </nav>
-    </header>
-
-    <div class="scroll-to-bottom" style="position: fixed; z-index: 100">
-      <button id="scrollBOTTOM">
-        <i class="material-icons">UP</i>
-      </button>
+        <div class="ILcontents">
+            <div class="ILquote">
+                <span id="typed"></span>
+            </div>
+            <img src="images/profileImage.png" class="intro-image">
+        </div>
     </div>
+    <div id="mojs-container"></div> <!-- Container for Mo.js animation -->
+
 
     <script>
-      const scrollBOTTOM = document.querySelector("#scrollBOTTOM");
-      scrollBOTTOM.addEventListener("click", function () {
-        window.scrollTo({
-          top: 0,
+        document.addEventListener("DOMContentLoaded", function () {
+          new Typed("#typed", {
+            strings: ["WELCOME TO AKSHAT'S WORLD", "EXPLORE MY PORTFOLIO"], // Add your sentences here
+            typeSpeed: 50, // Typing speed in milliseconds
+            backSpeed: 30, // Backspacing speed in milliseconds
+            loop: true, // Enable looping
+            showCursor: true, // Show blinking cursor
+            cursorChar: "|", // Customize cursor character
+            onComplete: function () {
+                // Optional: Hide the cursor after typing is complete
+                document.querySelector(".typed-cursor").style.display = "none";
+            },
+          });
+        });
+      </script>
+<script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+<script>
+    window.addEventListener("load", function () {
+      const introLanding = document.getElementById("intro-landing");
+      const mainContent = document.querySelector(".main-content");
+      const continueBtn = document.getElementById("Sbutton");
+
+      // When the button is clicked
+      continueBtn.addEventListener("click", function () {
+        // Slide away animation
+        introLanding.style.animation = "slideAway 2.5s ease-out forwards";
+
+        // Start Mo.js animation in the center of the viewport
+        const burst = new mojs.Burst({
+          parent: '#mojs-container', // Attach to the container in the center of the viewport
+          radius: { 0: 150 },
+          count: 12,
+          children: {
+            shape: 'circle',
+            radius: { 10: 0 },
+            fill: { '#FF9C00': '#F54EA2' },
+            duration: 2500,
+            easing: 'cubic.out',
+          },
+        });
+
+        // const circle = new mojs.Shape({
+        //   parent: '#mojs-container', // Attach to the container in the center of the viewport
+        //   stroke: '#FF9C00',
+        //   strokeWidth: { 10: 0 },
+        //   fill: 'none',
+        //   scale: { 0: 1 },
+        //   radius: 50,
+        //   duration: 2500,
+        //   easing: 'cubic.out',
+        // });
+
+        const timeline = new mojs.Timeline({ speed: 1.5 });
+        timeline.add(burst, circle).play();
+
+        // Hide intro and show main content after animation
+        setTimeout(() => {
+          introLanding.style.display = "none";
+          mainContent.style.display = "block";
+          document.body.style.overflow = "auto";
+        }, 2500); // Matches the animation duration
+      });
+    });
+
+    // Keyframe animation
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes slideAway {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+</script>
+
+
+      
+    <div class="main-content">
+        <div class="panel1" id="panel1">
+            <div class="left">
+                <div class="leftContent">
+                    <h1>
+                        <span>HELLO,</span> <span>I'M</span> <span>AKSHAT</span> <span>YADAV</span>
+                    </h1>
+                    <p>
+                        <span>I'm</span> <span>a</span> <span>passionate</span> <span>web</span> <span>developer</span> 
+                        <span>with</span> <span>a</span> <span>keen</span> <span>interest</span> <span>in</span> 
+                        <span>creating</span> <span>dynamic</span> <span>and</span> <span>responsive</span> 
+                        <span>web</span> <span>applications.</span>
+                    </p>
+                    <p>
+                        <span>Feel</span> <span>free</span> <span>to</span> <span>explore</span> <span>my</span> 
+                        <span>projects</span> <span>and</span> <span>get</span> <span>in</span> <span>touch!</span>
+                    </p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="circleSpring">
+                    <div class="circle" style="--i:0;"></div>
+                    <div class="circle" style="--i:1;"></div>
+                    <div class="circle" style="--i:2;"></div>
+                    <div class="circle" style="--i:3;"></div>
+                    <div class="circle" style="--i:4;"></div>
+                    <div class="circle" style="--i:5;"></div>
+                    <div class="circle" style="--i:6;"></div>
+                    <div class="circle" style="--i:7;"></div>
+                    <div class="circle" style="--i:8;"></div>
+                    <div class="circle" style="--i:9;"></div>
+                    <div class="circle" style="--i:10;"></div>
+                    <div class="circle" style="--i:11;"></div>
+                    <div class="circle" style="--i:12;"></div>
+                    <div class="circle" style="--i:13;"></div>
+                    <div class="circle" style="--i:14;"></div>
+                    <div class="circle" style="--i:15;"></div>
+                    <div class="circle" style="--i:16;"></div>
+                    <div class="circle" style="--i:17;"></div>
+                    <div class="circle" style="--i:18;"></div>
+                    <div class="circle" style="--i:19;"></div>
+                    <div class="circle" style="--i:20;"></div>
+                  </div>
+            </div>
+        </div>
+        <div id="panel2">My Projects</div>
+        <div id="panel3" class="panel2">
+    <div class="content">
+        <h2>Netflix Clone</h2>
+        <p>Tech Stack: <span>Sample Text</span></p>
+    </div>
+    <div class="project-logo">
+        <img src="images/NetFlix.png" alt="Project Logo" class="logo-image">
+    </div>
+    <div class="demobtn">
+      <a class="linkDiv demo-button" href="https://akshat1276.github.io/NetFlix-Clone/">See Demo</a>
+    </div>
+</div>
+
+<div id="panel4" class="panel2">
+    <div class="content">
+        <h2>IITR Website Clone</h2>
+        <p>Tech Stack: <span>Sample Text</span></p>
+    </div>
+    <div class="project-logo">
+        <img src="images/IITRlogo.svg" alt="Project Logo" class="logo-image">
+    </div>
+    <a class="linkDiv demo-button" href="https://akshat1276.github.io/htmlCssAssignmentIMG-Desktop-View/">See Demo</a>
+</div>
+
+<div id="panel5" class="panel2">
+    <div class="content">
+        <h2>Easy Sell</h2>
+        <p>Tech Stack: <span>Sample Text</span></p>
+    </div>
+    <div class="project-logo">
+        <img src="images/EasySell.svg" alt="Project Logo" class="logo-image">
+    </div>
+    <a class="linkDiv demo-button" href="https://akshat1276.github.io/Easysell-website/">See Demo</a>
+</div>
+        <div class="panel2" id="panel6"><a class="linkDiv" href="#"><br>Brick Game (OpenCV)</a></div>
+        <div class="panel2" id="panel7"><a class="linkDiv" href="#"><br>Tic-Tac-Toe (Python)</a></div>
+    </div>
+    <script>
+        ScrollReveal().reveal('.panel2', {
+          origin: 'bottom',
+          distance: '60px',
+          duration: 1000,
+          delay: 200,
+          easing: 'ease-in-out',
+          reset: false, // Set to true if you want the animation to repeat when re-entering view
+          opacity: 0
+        });
+      </script>
+<script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const testButton = document.createElement("button");
+      testButton.textContent = "Test Animation";
+      testButton.style.position = "fixed";
+      testButton.style.top = "50%";
+      testButton.style.left = "50%";
+      testButton.style.transform = "translate(-50%, -50%)";
+      document.body.appendChild(testButton);
+  
+      testButton.addEventListener("click", function () {
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+  
+        const burst = new mojs.Burst({
           left: 0,
-          behavior: "smooth",
+          top: 0,
+          x: centerX,
+          y: centerY,
+          radius: { 0: 100 },
+          count: 12,
+          children: {
+            shape: "circle",
+            radius: { 10: 0 },
+            fill: { "#FF9C00": "#F54EA2" },
+            duration: 3000,
+            easing: "cubic.out",
+          },
+        });
+  
+        burst.play();
+      });
+    });
+  </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Select all links with the class 'linkDiv'
+      const links = document.querySelectorAll(".linkDiv");
+  
+      links.forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+
+  
+          // Create a Mo.js burst animation
+          const burst = new mojs.Burst({
+            parent: document.body,
+            radius: { 0: 100 },
+            count: 12,
+            x : window.innerWidth / 2,
+            y : window.innerHeight / 2,
+            children: {
+              shape: "circle",
+              radius: { 10: 0 },
+              fill: { "#FF9C00": "#F54EA2" },
+              duration: 3000,
+              easing: "cubic.out",
+            },
+          });
+  
+          const circle = new mojs.Shape({
+            parent: document.body,
+            stroke: "#FF9C00",
+            strokeWidth: { 10: 0 },
+            fill: "none",
+            x : window.innerWidth / 2,
+            y : window.innerHeight / 2,
+            scale: { 0: 1 },
+            radius: 50,
+            duration: 3000,
+            easing: "cubic.out",
+          });
+            
+          // Get the center of the viewport
+          const centerX = window.innerWidth / 16;
+          const centerY = window.innerHeight / 2;
+  
+          // Position the animation at the center of the screen
+          burst.tune({ x: centerX, y: centerY }).play();
+          circle.tune({ x: centerX, y: centerY }).play();
+  
+          // Delay navigation to the link's href by 1 second
+          setTimeout(() => {
+            window.location.href = link.href;
+          }, 1000);
         });
       });
-    </script>
+    });
+  </script>
 
-    <main>
-      <section class="firstSection">
-        <div class="leftSection">
-          Hi, my name is <span class="purple">Akshat</span>
-          <div>And I am a passionate</div>
-          <span id="element"></span>
-        </div>
-        <div class="rightSection">
-          <img src="images/image.png" />
-        </div>
-      </section>
-      <hr />
-      <section class="secondSection">
-        <span class="text-gray">What I have done so far</span>
-        <h1>Work Experiences</h1>
-        <div class="box">
-          <div class="vertical">
-            <img class="image-top" src="images/image.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
-            <div class="vertical-desc">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-              dignissimos.
-            </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="images/image.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
-            <div class="vertical-desc">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-              dignissimos.
-            </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="images/image.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
-            <div class="vertical-desc">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-              dignissimos.
-            </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="images/image.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
-            <div class="vertical-desc">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel,
-              dignissimos.
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="footer">
-        <div class="footer-first">
-          <h3>Akshat's Developer Portfolio</h3>
-        </div>
-        <div class="footer-second"></div>
-        <div class="footer-third"></div>
-        <div class="footer-fourth"></div>
-      </div>
-    </footer>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-      var typed = new Typed("#element", {
-        strings: [" ", " ", " ", " ", "Web Developer", "Web Designer", "Competitive Coder"],
-        typeSpeed: 50,
-      });
-    </script>
-  </body>
+  
+
+      
+      
+
+</body>
 </html>
